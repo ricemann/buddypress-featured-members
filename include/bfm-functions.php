@@ -42,7 +42,7 @@ function bfm_featured_members_markup($query,$view,$astyle,$asize){
         return;
 
     if(bp_has_members($query)) {
-        $html = '<div id="bfm_members">';
+        $html = '<div class="bfm_members">';
         if ($view == 'slider') {
             $html .= '<div class="bfm_nav">';
             $html .= '<a class="prev" id="bfm_prev" href="#"><span>prev</span></a>';

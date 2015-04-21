@@ -62,16 +62,21 @@ function bfm_script_loader(){
         );
     else:
         wp_enqueue_script(
+            'bfm-carouFredSel-js',
+            plugins_url('/lib/js/jquery.carouFredSel-6.2.1-packed.js', __FILE__),
+            array('jquery'),
+            null,
+            true
+        );
+        wp_enqueue_script(
                     'bfm-script-js',
                     plugins_url('/lib/js/bfm-script.js', __FILE__),
-                    array('jquery')
+                    array('jquery','bfm-carouFredSel-js'),
+            null,
+            true
         );
     
-        wp_enqueue_script(
-                    'bfm-carouFredSel-js',
-                    plugins_url('/lib/js/jquery.carouFredSel-6.2.1-packed.js', __FILE__),
-                    array('jquery')
-        );
+
     endif;
 }
 add_action('wp_enqueue_scripts', 'bfm_script_loader');
